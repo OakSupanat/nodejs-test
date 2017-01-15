@@ -1,4 +1,17 @@
 body {
-	background-color: teal;
+	background-color: #74AFAD;
 }
 
+.row .form-inline {
+	margin: 3rem;
+}
+
+.instruction {
+	color: #ececea;
+}
+
+.jumbotron.text-center .my-email {
+	font-size: 15px;
+	font-weight: 200;
+	color: #00796b;
+}

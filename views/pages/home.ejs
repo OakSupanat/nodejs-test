@@ -1,35 +1,51 @@
 
 <%- contentFor('hero') %>
-<a href="/contact">To contact page</a>
-<a href="/about">To about page</a>
-	<h1> Hello Oak </h1>
-
+<div class="jumbotron text-center">
+	<h2>GetLinks Nodejs Test</h2>
+	<p>by Supanat Piphitpattanaprapt</p>
+	<a class="my-email" href="mailto:oaksupanat@gmail.com">oaksupanat@gmail.com</a>
+</div>
 
 
 <%- contentFor('body') %>
-<div class="jumbotron text-center">
-	<h2>GetLinks Nodejs Test</h2>
-</div>
-
 <div class="row">
 	<div class="col-sm-6 col-sm-offset-3">
-		<h3>Fill in the name who you would like to see his followers</h3>
-
-
-		<form action="/contact" method="POST">
+		<h3 class="instruction">Fill in the name who you would like to see his followers</h3>
+		<form action="/" method="GET" class="form-inline">
 			<div class="form-group">
 				<label>Name</label>
 				<input type="text" name="name" class="form-control">
 			</div>
-			<div class="form-group">
-				<label>Your Message</label>
-				<input type="text" name="message" class="form-control">
-			</div>
-			<div class="form-group text-right">
+			<button type="submit" class="btn btn-primary btn-md">Find Followers</button>
+			<!-- <div class="form-group text-right">
 				<button type="submit" class="btn btn-primary btn-lg">Send it</button>
-			</div>
-
+			</div> -->
 		</form>
+
+		<div class="panel panel-default">
+			<div class="panel-heading">Followers of <%- username %></div>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>avatar</th>
+						<th>login</th>
+						<th>url</th>
+					</tr>
+				</thead>
+				<tbody>
+					<% for (user of users) { %>
+						<tr>
+							<th><%= users.indexOf(user) + 1 %></th>
+							<td><img src="<%= user.avatar_url %>" class="img-thumbnail"></td>
+							<td><%= user.login %></td>
+							<td><%= user.html_url %></td>
+						</tr>
+					<% } %>
+					
+				</tbody>
+			</table>
+		</div>
 	</div>
 </div>
 
