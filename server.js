@@ -4,7 +4,7 @@ var express = require('express');
 var expressLayouts = require('express-ejs-layouts');
 var bodyParser = require('body-parser');
 var app = express();
-var port = 5558;
+var port = 8888;
 var cors = require('cors');
 //use ejs+express layouts
 app.set('view engine', 'ejs');
