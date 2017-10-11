@@ -6,7 +6,10 @@ var bodyParser = require('body-parser');
 var app = express();
 var port = 8888;
 var cors = require('cors');
+var path = require('path');
+
 //use ejs+express layouts
+app.set('views', path.resolve(__dirname, 'views'))
 app.set('view engine', 'ejs');
 app.use(expressLayouts);
 
