@@ -18,8 +18,8 @@ app.use(expressLayouts);
 app.use(bodyParser.urlencoded());
 app.use(cors());
 //route the app
-var router = require('./app/routes')
-app.use('/github-followers', router);
+var router = require('./app/routes');
+app.use('/github-followers/*', router);
 app.use('/', router);
 
 
