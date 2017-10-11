@@ -13,11 +13,9 @@ var router = express.Router();
 //export the router
 module.exports = router;
 
-
-
 router.get('/', function(req, res){
 		if(!req.query.name) {
-			res.render('pages/home', {users: [] , username: ''});
+			res.render(path.resolve(__dirname, '..', 'views', 'pages/home'), {users: [] , username: ''});
 		} else {
 			let username = req.query.name;
 			var on_contents = function(callback) {
@@ -41,9 +39,8 @@ router.get('/', function(req, res){
 			};
 
 			function onFinish(data) {
-			    console.log(data);
 			    var users = data;
-		    	res.render('pages/home', { users: users , username: req.query.name });
+		    	res.render(path.resolve(__dirname, '..', 'views', 'pages/home'), { users: users , username: req.query.name });
 			}
 
 			on_contents(onFinish);

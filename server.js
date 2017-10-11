@@ -28,7 +28,7 @@ app.use(express.static(__dirname + '/public'));
 
 //start server
 app.listen(port, function() {
-	console.log("app started at port: " + port);
+	console.log("App started at port: " + port);
 });
 
 
